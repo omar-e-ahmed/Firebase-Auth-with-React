@@ -28,15 +28,3 @@ export const fetchUserAccount = async () => {
     return e;
   }
 };
-
-// export const login = async (email: any, password: any) => {
-//   try {
-//     const {login} =
-//     const loginReq = await auth.signInWithEmailAndPassword(email, password);
-//     return loginReq;
-//   } catch (e) {
-//     return e;
-//   }
-//   const loginRequest = await login(email, password);
-
-// }

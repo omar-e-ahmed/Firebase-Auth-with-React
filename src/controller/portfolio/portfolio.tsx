@@ -3,7 +3,7 @@ import { Portfolio } from "../../../types/portfolio";
 
 import { getIdToken } from "../../firebase";
 
-const API = "http://localhost:8000";
+const API = process.env.REACT_APP_API;
 
 /** Create */
 export const createPortfolio = async (portfolio: Portfolio) => {
