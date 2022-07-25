@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import { Grid, Container, Typography, Button } from "@mui/material";
 import { Iconify } from "../../components/Iconify";
 import AppCurrentSubject from "../../components/chart/AppCurrentSubject";
-import axios from "axios";
-import { getAllPortfoliosByUser } from "../../controller/portfolio/portfolio";
-// import { Portfolio } from "../../../types/portfolio";
+// import { getAllPortfoliosByUser } from "../../controller/portfolio/portfolio";
 import { useAuth } from "../../context/AuthContext";
 import {
   AppTasks,
@@ -16,9 +14,9 @@ import { fetchUserAccount } from "../../controller/auth/auth";
 
 type Props = {};
 
-const handleClick = async () => {
-  const get = await getAllPortfoliosByUser();
-};
+// const handleClick = async () => {
+//   const get = await getAllPortfoliosByUser();
+// };
 
 const Dashboard = (props: Props) => {
   const auth = useAuth();

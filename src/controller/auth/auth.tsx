@@ -1,5 +1,5 @@
 import axios from "axios";
-import { auth } from "../../firebase";
+// import { auth } from "../../firebase";
 import { getIdToken } from "../../firebase";
 
 const API = process.env.REACT_APP_API;

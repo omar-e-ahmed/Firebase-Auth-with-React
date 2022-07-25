@@ -1,6 +1,5 @@
 import * as React from "react";
 import Alert, { AlertColor } from "@mui/material/Alert";
-import Stack from "@mui/material/Stack";
 
 type Props = {
   text: string;
@@ -17,7 +16,7 @@ export default function BasicAlerts({ text, severity, timeout }: Props) {
         setOpen(false);
       }, timeout);
     }
-  }, [text]);
+  }, [timeout]);
 
   return open ? (
     <div>

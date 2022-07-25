@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Link from "@mui/material/Link";
-// material
 import {
   Stack,
   Checkbox,
@@ -96,7 +95,12 @@ export default function LoginForm() {
           sx={{ my: 2 }}
         >
           <FormControlLabel
-            control={<Checkbox checked={remember} />}
+            control={
+              <Checkbox
+                checked={remember}
+                onClick={() => setRemember(!remember)}
+              />
+            }
             label="Remember me"
           />
 
@@ -104,7 +108,7 @@ export default function LoginForm() {
         </Stack>
 
         <Button fullWidth size="large" type="submit" variant="contained">
-          Login
+          {loading ? "..." : "Login"}
         </Button>
       </form>
     </>

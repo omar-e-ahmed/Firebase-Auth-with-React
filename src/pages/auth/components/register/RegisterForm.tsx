@@ -31,7 +31,7 @@ export default function RegisterForm() {
     firstName: "",
     lastName: "",
   });
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const handleChange = (e: any) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -68,10 +68,6 @@ export default function RegisterForm() {
         lastName: "",
       });
     }
-  };
-
-  const handleShowPassword = () => {
-    setShowPassword(show => !show);
   };
 
   useEffect(() => {

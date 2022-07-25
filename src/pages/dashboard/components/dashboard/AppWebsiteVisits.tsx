@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-// @mui
 import { Card, CardHeader, Box } from "@mui/material";
 import { BaseOptionChart } from "../../../../components/chart";
 import ReactApexChart from "react-apexcharts";

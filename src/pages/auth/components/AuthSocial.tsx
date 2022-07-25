@@ -1,9 +1,9 @@
 import { Stack, Button, Divider, Typography } from "@mui/material";
 import { Iconify } from "../../../components/Iconify";
-import { useAuth } from "../../../context/AuthContext";
+// import { useAuth } from "../../../context/AuthContext";
 
 export default function AuthSocial() {
-  const { login } = useAuth();
+  // const { login } = useAuth();
   return (
     <>
       <Stack direction="row" spacing={2} className="px-10">

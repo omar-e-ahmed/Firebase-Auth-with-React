@@ -1,7 +1,5 @@
 import { Icon } from "@iconify/react";
-// @mui
 import { Box } from "@mui/material";
-import react from "react";
 
 type Props = {
   icon: string;
