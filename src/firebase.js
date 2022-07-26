@@ -20,7 +20,7 @@ export const getIdToken = async () => {
     const getToken = await auth.currentUser.getIdToken();
     return getToken;
   } catch (e) {
-    console.log("error", e);
+    console.log("error occurred while getting id token");
   }
 };
 

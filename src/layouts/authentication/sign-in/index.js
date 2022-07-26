@@ -80,9 +80,8 @@ function SignIn() {
     >
       <SoftBox component="form" role="form">
         {location.state && location.state.success && (
-          <SoftAlert color="success">
-            <Icon fontSize="small">thumb_up</Icon>&nbsp; Account successfully registered. Sign in
-            below.
+          <SoftAlert color="success" dismissable={true}>
+            Account successfully registered. Sign in below.
           </SoftAlert>
         )}
         {errors.email && (

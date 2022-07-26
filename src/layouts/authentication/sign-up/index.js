@@ -53,21 +53,18 @@ function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e);
     setErrors({
       email: "",
       password: "",
       firstName: "",
       lastName: "",
     });
-    console.log(user);
     try {
       const create = await createUser(user);
-      console.log(create);
       if (create.status === 200) {
         navigate("/auth/login", { state: { success: true } });
       } else {
-        console.log(create);
+        create;
         setErrors({
           email: create.response.data.email || "",
           password: create.response.data.password || "",
@@ -126,7 +123,7 @@ function SignUp() {
                 placeholder="First Name"
                 onChange={handleChange}
                 value={user.firstName}
-                errors={errors.firstName.length > 0}
+                error={errors.firstName.length > 0}
               />
             </SoftBox>
             <SoftBox mb={2}>
@@ -135,7 +132,7 @@ function SignUp() {
                 placeholder="Last Name"
                 onChange={handleChange}
                 value={user.lastName}
-                errors={errors.lastName.length > 0}
+                error={errors.lastName.length > 0}
               />
             </SoftBox>
             <SoftBox mb={2}>
@@ -145,7 +142,7 @@ function SignUp() {
                 placeholder="Email"
                 onChange={handleChange}
                 value={user.email}
-                errors={errors.email.length > 0}
+                error={errors.email.length > 0}
               />
             </SoftBox>
             <SoftBox mb={2}>
@@ -155,7 +152,7 @@ function SignUp() {
                 placeholder="Password"
                 value={user.password}
                 onChange={handleChange}
-                errors={errors.password.length > 0}
+                error={errors.password.length > 0}
               />
             </SoftBox>
             <SoftBox display="flex" alignItems="center">
