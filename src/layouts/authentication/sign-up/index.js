@@ -45,6 +45,7 @@ function SignUp() {
     password: "",
     firstName: "",
     lastName: "",
+    terms: "",
   });
 
   const handleChange = (e) => {
@@ -58,8 +59,12 @@ function SignUp() {
       password: "",
       firstName: "",
       lastName: "",
+      terms: "",
     });
     try {
+      if (!agreement) {
+        throw new Error("You must agree to the terms and conditions");
+      }
       const create = await createUser(user);
       if (create.status === 200) {
         navigate("/auth/login", { state: { success: true } });
@@ -70,15 +75,21 @@ function SignUp() {
           password: create.response.data.password || "",
           firstName: create.response.data.firstName || "",
           lastName: create.response.data.lastName || "",
+          terms: "",
         });
       }
     } catch (e) {
-      setErrors({
-        email: "Failed to register",
-        password: "",
-        firstName: "",
-        lastName: "",
-      });
+      if (e.message === "You must agree to the terms and conditions") {
+        setErrors({ ...errors, terms: e.message });
+      } else {
+        setErrors({
+          email: "Failed to register",
+          password: "",
+          firstName: "",
+          lastName: "",
+          terms: "",
+        });
+      }
     }
   };
 
@@ -107,6 +118,11 @@ function SignUp() {
         <Separator />
         <SoftBox pt={2} pb={3} px={3}>
           <SoftBox component="form" role="form">
+            {errors.terms && (
+              <SoftAlert color="error" dismissable={true}>
+                {errors.terms}
+              </SoftAlert>
+            )}
             {errors.email && (
               <SoftAlert color="error" dismissable={true}>
                 {errors.email}
