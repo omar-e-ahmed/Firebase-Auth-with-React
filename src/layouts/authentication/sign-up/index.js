@@ -122,30 +122,38 @@ function SignUp() {
             )}
             <SoftBox mb={2}>
               <SoftInput
+                name="firstName"
                 placeholder="First Name"
                 onChange={handleChange}
+                value={user.firstName}
                 errors={errors.firstName.length > 0}
               />
             </SoftBox>
             <SoftBox mb={2}>
               <SoftInput
+                name="lastName"
                 placeholder="Last Name"
                 onChange={handleChange}
+                value={user.lastName}
                 errors={errors.lastName.length > 0}
               />
             </SoftBox>
             <SoftBox mb={2}>
               <SoftInput
                 type="email"
+                name="email"
                 placeholder="Email"
                 onChange={handleChange}
+                value={user.email}
                 errors={errors.email.length > 0}
               />
             </SoftBox>
             <SoftBox mb={2}>
               <SoftInput
                 type="password"
+                name="password"
                 placeholder="Password"
+                value={user.password}
                 onChange={handleChange}
                 errors={errors.password.length > 0}
               />

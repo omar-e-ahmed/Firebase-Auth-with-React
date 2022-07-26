@@ -1,12 +1,11 @@
 import axios from "axios";
-import { Portfolio } from "../../../types/portfolio";
 
 import { getIdToken } from "../../firebase";
 
 const API = process.env.REACT_APP_API;
 
 /** Create */
-export const createPortfolio = async (portfolio: Portfolio) => {
+export const createPortfolio = async (portfolio) => {
   try {
     const token = await getIdToken();
     if (token) {
@@ -23,7 +22,7 @@ export const createPortfolio = async (portfolio: Portfolio) => {
 };
 
 /** Edit */
-export const editPortfolio = async (id: string, portfolio: Portfolio) => {
+export const editPortfolio = async (id, portfolio) => {
   try {
     const token = await getIdToken();
     if (token) {
@@ -56,7 +55,7 @@ export const getAllPortfoliosByUser = async () => {
   }
 };
 
-export const getPortfolioById = async (portfolioId: number) => {
+export const getPortfolioById = async (portfolioId) => {
   try {
     const token = await getIdToken();
     if (token) {

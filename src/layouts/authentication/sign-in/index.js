@@ -23,6 +23,7 @@ import { useAuth } from "../../../context/AuthContext";
 import SoftAlert from "components/SoftAlert";
 // @mui material components
 import Icon from "@mui/material/Icon";
+import { initBackend } from "controller/util";
 
 function SignIn() {
   const [rememberMe, setRememberMe] = useState(true);
@@ -59,6 +60,10 @@ function SignIn() {
   const handleShowPassword = () => {
     setShowPassword((show) => !show);
   };
+
+  useEffect(() => {
+    initBackend();
+  }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
