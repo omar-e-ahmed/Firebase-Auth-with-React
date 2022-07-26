@@ -131,6 +131,7 @@ export default function App() {
         </Route>
         <Route path="/" element={<PrivateRoute />}>
           {getRoutes(routes)}
+          <Route index path="/" element={<Navigate to="/dashboard" />} />
           <Route path="*" element={<Navigate to="/dashboard" />} />
         </Route>
       </Routes>

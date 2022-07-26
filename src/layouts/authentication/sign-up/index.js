@@ -12,6 +12,7 @@ import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftInput from "components/SoftInput";
 import SoftButton from "components/SoftButton";
+import SoftAlert from "components/SoftAlert";
 
 // Authentication layout components
 import BasicLayout from "layouts/authentication/components/BasicLayout";
@@ -109,22 +110,36 @@ function SignUp() {
         <Separator />
         <SoftBox pt={2} pb={3} px={3}>
           <SoftBox component="form" role="form">
+            {errors.email && (
+              <SoftAlert color="error" dismissable={true}>
+                {errors.email}
+              </SoftAlert>
+            )}
+            {errors.password && (
+              <SoftAlert color="error" dismissable={true}>
+                {errors.password}
+              </SoftAlert>
+            )}
             <SoftBox mb={2}>
               <SoftInput
                 placeholder="First Name"
                 onChange={handleChange}
-                errors={errors.firstName}
+                errors={errors.firstName.length > 0}
               />
             </SoftBox>
             <SoftBox mb={2}>
-              <SoftInput placeholder="Last Name" onChange={handleChange} errors={errors.lastName} />
+              <SoftInput
+                placeholder="Last Name"
+                onChange={handleChange}
+                errors={errors.lastName.length > 0}
+              />
             </SoftBox>
             <SoftBox mb={2}>
               <SoftInput
                 type="email"
                 placeholder="Email"
                 onChange={handleChange}
-                errors={errors.email}
+                errors={errors.email.length > 0}
               />
             </SoftBox>
             <SoftBox mb={2}>
@@ -132,7 +147,7 @@ function SignUp() {
                 type="password"
                 placeholder="Password"
                 onChange={handleChange}
-                errors={errors.password}
+                errors={errors.password.length > 0}
               />
             </SoftBox>
             <SoftBox display="flex" alignItems="center">
