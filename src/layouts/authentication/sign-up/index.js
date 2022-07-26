@@ -60,6 +60,7 @@ function SignUp() {
       firstName: "",
       lastName: "",
     });
+    console.log(user);
     try {
       const create = await createUser(user);
       console.log(create);
@@ -75,7 +76,6 @@ function SignUp() {
         });
       }
     } catch (e) {
-      console.log(e);
       setErrors({
         email: "Failed to register",
         password: "",
