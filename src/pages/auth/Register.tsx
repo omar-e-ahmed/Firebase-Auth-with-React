@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { styled } from "@mui/material/styles";
-import { Card, Container, Typography } from "@mui/material";
+import { Card, Container, Typography, Grid } from "@mui/material";
 import { RegisterForm } from "./components/register";
 import AuthSocial from "./components/AuthSocial";
 import { useAuth } from "../../context/AuthContext";
@@ -35,6 +35,13 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   margin: theme.spacing(2, 0, 2, 2),
+  [theme.breakpoints.up("sm")]: {
+    display: "flex",
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+  },
 }));
 
 const ContentStyle = styled("div")(({ theme }) => ({
